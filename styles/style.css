@@ -217,13 +217,46 @@
   .intro-text,
   .intro-images {
     position:relative;
-    right:0%;
     height:20%;
     top:20%;
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 20rem;
-            flex: 1 1 20rem;
-            text-align:justify;
+    -ms-flex: 1 1 20rem;
+    flex: 1 1 20rem;
+    text-align:left;
+  }
+
+  .intro-images img {
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Prevents inline spacing issues */
+    margin: auto; /* Centers the image vertically if needed */
+    padding: auto;
+    width: 100%;
+  }
+
+  .about-text {
+    position:relative;
+    right:0%;
+    height:20%;
+    top:20%;
+    text-align:justify;
+    width: 70%;
+  }
+
+  .about-images {
+    position:relative;
+    right:0%;
+    height:20%;
+    top:20%;
+    text-align:center;
+    width: 30%;
+  }
+
+  .about-images img {
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Prevents inline spacing issues */
+    margin: auto; /* Centers the image vertically if needed */
+    padding: auto;
+    width: 100%;
   }
 
   .splash {
@@ -233,20 +266,10 @@
     height: 100%;
     z-index: -1;
   }
-  
-
-
-  /* for swh_selfie */
-  .selfie {
-    padding:auto;
-    max-width: 600px;
-    min-width:300px;
-  }
 
   /* for gallery statement */
   .closing {
     margin-bottom:30px;
-
   }
 
   /* more-info: for gallery statement specificially */
@@ -546,9 +569,9 @@ footer ul li a {
     width: 100%;
   }
 }
-
-/* settings for screen width 755 - 870 px */
-@media screen and (max-width: 870px) {
+  
+  /* settings for screen width 755 - 870 px */
+  @media screen and (max-width: 870px) {
   html {
     font-size: 60%;
   }
@@ -561,82 +584,45 @@ footer ul li a {
   nav {
     width: 100%;
   }
-  .selfie {
-  height:200px;
-  }
 }
-
-/* settings for screen width less than 754 px */
-@media screen and (max-width: 754px) {
+  
+  /* settings for screen width less than 754 px */
+  @media screen and (max-width: 754px) {
   .intro {
     min-height: 10vh;
-  }
-  html {
-    font-size: 45%;
-  }
-  svg {
-    height: 30%;
-  }
-  .main-head {
-    width: 100%;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
-    z-index: 3;
-  }
-  nav .logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 20rem;
-            flex: 1 1 20rem;
-    margin-top: 1rem;
-  }
-  nav ul {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 60rem;
-            flex: 1 1 60rem;
-    margin: 2rem 0rem;
-  }
-  .selfie {
-    max-width: 150px;
+    flex-direction: column;
   }
   .intro-text {
+    order: 2;
     margin-top: 0rem;
-    text-align:justify;
-  }
-  .intro-images {
     text-align: center;
   }
-  footer h4,
-  footer h4 a u {
-    font-size: 8px;
+  .intro-images {
+    order: 1;
+    text-align: center;
+    width: 50%;
   }
-  footer {
-    min-height: 10vh;
+  .about-text {
+    margin-top: 0rem;
+    text-align: justify;
+    width: 100%;
   }
-}
+  .about-images {
+    text-align: center;
+    width:100%;
+  }
 
-
-@media screen and (max-width: 520px) {
-  .intro {
-    min-height: 10vh;
+  .about-images img {
+    width: 100%; /* Ensure the image scales to fit the parent div */
+    height: auto; /* Maintain the aspect ratio */
+    aspect-ratio: 1 / 1; /* Crop the image to a 4:3 aspect ratio */
+    object-fit: cover; /* Ensures the image fills the container while maintaining proportions */
+    object-position: top; /* Centers the image within the container */
   }
+
   html {
     font-size: 45%;
   }
-
   svg {
     height: 30%;
   }
@@ -672,17 +658,6 @@ footer ul li a {
             flex: 1 1 60rem;
     margin: 2rem 0rem;
   }
-  .selfie {
-    max-width: 150px;
-  }
-  .intro-text {
-    margin: 0rem;
-    text-align:justify;
-    padding: 0rem;
-  }
-  .intro-images {
-    text-align: center;
-  }
   footer h4,
   footer h4 a u {
     font-size: 8px;
@@ -691,5 +666,10 @@ footer ul li a {
     min-height: 10vh;
   }
 }
+  
+  
+  @media screen and (max-width: 520px) {
 
+}
+  
   /*# sourceMappingURL=style.css.map */
